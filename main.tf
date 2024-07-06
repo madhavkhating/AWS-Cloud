@@ -8,14 +8,10 @@ resource "aws_iam_user" "iamusr1" {
 resource "aws_instance" "myins1" {
   ami           = "ami-01b799c439fd5516a"
   instance_type = var.instype
-  vpc_security_group_ids = [data.aws_security_group.sg.id]
-  tags = {
+    tags = {
     Name = element(var.env, 2)
   }
 
-}
-data "aws_security_group" "sg" {
-  id = "sg-00a79cfac1fbe924f"
 }
 resource "aws_s3_bucket" "mybkt" {
   bucket = var.bkt
