@@ -3,6 +3,7 @@ resource "aws_vpc" "myvpc" {
 tags = {
 Name =var.cloud
 }
+}
 resource "aws_iam_user" "iamusr1" {
   name = var.iam
   path = "/system/"
@@ -31,9 +32,6 @@ resource "aws_subnet" "sbnet1" {
   tags = {
     Name = "sbnet1"
   }
-tags = {
-Name =var.cloud
-}
 }
 varibale "cloud" {
 default = "cloud"
