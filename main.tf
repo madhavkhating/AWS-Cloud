@@ -33,6 +33,6 @@ resource "aws_subnet" "sbnet1" {
     Name = "sbnet1"
   }
 }
-varibale "cloud" {
+variable "cloud" {
 default = "cloud"
 }
